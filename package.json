@@ -1,6 +1,6 @@
 {
   "name": "simareeno-project-lvl1-s208",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "main": "src/bin/brain-games.js",
   "scripts": {
@@ -30,5 +30,8 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
   }
 }
