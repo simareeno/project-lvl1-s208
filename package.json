@@ -1,8 +1,8 @@
 {
   "name": "simareeno-project-lvl1-s208",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "src/bin/brain-games.js",
   "scripts": {
     "babel-node": "babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,6 +21,9 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/simareeno/project-lvl1-s208#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
