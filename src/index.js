@@ -6,9 +6,10 @@ export const sum = pair => car(pair) + cdr(pair);
 export const sub = pair => car(pair) - cdr(pair);
 export const mul = pair => car(pair) * cdr(pair);
 
-export const welcomeUser = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
+export const welcomeUser = (message) => {
+  let welcomeMessage = 'Welcome to the Brain Games!';
+  if (message) welcomeMessage += `\n${message}\n`;
+  console.log(welcomeMessage);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
   return userName;

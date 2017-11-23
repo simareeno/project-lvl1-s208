@@ -3,14 +3,16 @@ import { welcomeUser, game, getRandomNumber, sum, sub, mul } from '..';
 
 export const brainCalc = () => {
   const ROUNDS = 3;
-  const user = welcomeUser();
+  const welcomeMessage = 'What is the result of the expression?';
+  const user = welcomeUser(welcomeMessage);
   const signs = ['+', '-', '*'];
 
   const questions = () => {
     const questionsArray = [];
     for (let i = 0; i < ROUNDS; i += 1) {
       const numbersPair = cons(getRandomNumber(1, 15), getRandomNumber(1, 15));
-      const sign = signs[getRandomNumber(0, signs.length + 1)];
+      const sign = signs[getRandomNumber(0, signs.length)];
+      console.log(sign);
       const question = `${car(numbersPair)} ${sign} ${cdr(numbersPair)}`;
       let correctAnswer = Number;
       if (sign === '+') {

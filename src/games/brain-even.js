@@ -3,7 +3,8 @@ import { welcomeUser, game, getRandomNumber } from '..';
 
 export const brainEven = () => {
   const ROUNDS = 3;
-  const user = welcomeUser();
+  const welcomeMessage = 'Answer "yes" if number even otherwise answer "no".';
+  const user = welcomeUser(welcomeMessage);
 
   const questions = () => {
     const questionsArray = [];
