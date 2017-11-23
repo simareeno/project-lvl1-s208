@@ -12,7 +12,6 @@ export const brainCalc = () => {
     for (let i = 0; i < ROUNDS; i += 1) {
       const numbersPair = cons(getRandomNumber(1, 15), getRandomNumber(1, 15));
       const sign = signs[getRandomNumber(0, signs.length)];
-      console.log(sign);
       const question = `${car(numbersPair)} ${sign} ${cdr(numbersPair)}`;
       let correctAnswer = Number;
       if (sign === '+') {
