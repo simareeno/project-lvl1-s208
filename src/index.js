@@ -1,10 +1,18 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from 'hexlet-pairs';
+import { car, cdr, cons } from 'hexlet-pairs';
 
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 export const sum = pair => car(pair) + cdr(pair);
 export const sub = pair => car(pair) - cdr(pair);
 export const mul = pair => car(pair) * cdr(pair);
+export const gcd = (pair) => {
+  const a = Math.abs(car(pair));
+  const b = Math.abs(cdr(pair));
+  if (!b || b === 0) {
+    return a;
+  }
+  return gcd(cons(b, a % b));
+};
 
 export const welcomeUser = (message) => {
   let welcomeMessage = 'Welcome to the Brain Games!';
@@ -45,5 +53,5 @@ export const game = (user, questions) => {
 };
 
 export default {
-  welcomeUser, game, getRandomNumber, sum, sub, mul,
+  welcomeUser, game, getRandomNumber, sum, sub, mul, gcd,
 };
