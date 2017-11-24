@@ -1,17 +1,25 @@
 import readlineSync from 'readline-sync';
-import { car, cdr, cons } from 'hexlet-pairs';
+import { car, cdr, cons, isPair } from 'hexlet-pairs';
 
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 export const sum = pair => car(pair) + cdr(pair);
 export const sub = pair => car(pair) - cdr(pair);
 export const mul = pair => car(pair) * cdr(pair);
-export const gcd = (pair) => {
-  const a = Math.abs(car(pair));
-  const b = Math.abs(cdr(pair));
-  if (!b || b === 0) {
-    return a;
+
+export const gcd = (numbers) => {
+  if (isPair(numbers)) {
+    const a = Math.abs(car(numbers));
+    const b = Math.abs(cdr(numbers));
+    if (!b || b === 0) return a;
+    return gcd(cons(b, a % b));
   }
-  return gcd(cons(b, a % b));
+  let a = numbers[0];
+  let b;
+  for (let i = 1; i < numbers.length; i += 1) {
+    b = numbers[i];
+    a = gcd(cons(a, b));
+  }
+  return a;
 };
 
 export const welcomeUser = (message) => {
