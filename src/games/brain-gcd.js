@@ -7,7 +7,7 @@ export const brainGcd = () => {
   const getQuestion = () => {
     const numbersPair = cons(getRandomNumber(10, 100), getRandomNumber(10, 100));
     const question = `${car(numbersPair)} ${cdr(numbersPair)}`;
-    const correctAnswer = gcd([100, 100, 100, 100, 100]);
+    const correctAnswer = gcd(numbersPair);
     return cons(question, correctAnswer);
   };
 
