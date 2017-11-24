@@ -1,6 +1,6 @@
 {
   "name": "simareeno-project-lvl1-s208",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "",
   "main": "src/bin/brain-games.js",
   "scripts": {

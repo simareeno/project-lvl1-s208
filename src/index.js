@@ -35,21 +35,24 @@ const askQuestion = (question, correctAnswer) => {
   return answer === correctAnswer;
 };
 
-// Game. Receives username and array of questions.
+// Game. Receives welcome message and question function of questions.
 // Each question is a pair of question string and an answer.
-export const game = (user, questions) => {
+export const game = (welcomeMessage, getQuestion) => {
+  const ROUNDS = 3;
+  const user = welcomeUser(welcomeMessage);
   const startRound = (currentRound) => {
     if (currentRound === 0) {
       return console.log(`Congratulations, ${user}!`);
     }
-    const question = car(questions[currentRound - 1]); // get question string
-    const correctAnswer = cdr(questions[currentRound - 1]).toString(); // get right answer
+    const questionPair = getQuestion();
+    const question = car(questionPair); // get question string
+    const correctAnswer = cdr(questionPair).toString(); // get right answer
     const isCorrect = askQuestion(question, correctAnswer); // ask question
     return isCorrect ?
       startRound(currentRound - 1) : // next round
       console.log(`Let's try again, ${user}!`); // bye bye :(
   };
-  startRound(questions.length);
+  if (getQuestion) startRound(ROUNDS);
 };
 
 // Balances a pair of numbers
