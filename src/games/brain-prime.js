@@ -6,10 +6,14 @@ const welcomeMessage = 'Find the greatest common divisor of given numbers.';
 const questionMessage = 'Is this number prime?';
 
 export const isPrime = (num) => {
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) return false;
-  }
-  return num !== 1;
+  if (num < 1) return false;
+  if (num === 1) return true;
+  const primeRecursion = (numberToCheck) => {
+    if (numberToCheck === num) return true;
+    if (num % numberToCheck === 0) return false;
+    return primeRecursion(numberToCheck + 1);
+  };
+  return primeRecursion(2);
 };
 
 export const brainPrime = () => {

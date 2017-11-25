@@ -7,9 +7,9 @@ const PROGRESSION_LENGTH = 10;
 
 // Returns an array of numbers, generated progressivly
 const getProgression = () => {
-  const firstNumber = getRandomNumber(1, 20);
+  const startingNumber = getRandomNumber(1, 20);
   const increment = getRandomNumber(1, 10);
-  const progression = [firstNumber];
+  const progression = [startingNumber];
   const sign = getRandomSign();
   let rule = Function;
   if (sign === '+') rule = x => sum(cons(x, increment));
