@@ -3,6 +3,7 @@ import game from '..';
 import { getRandomNumber } from '../utils';
 
 const welcomeMessage = 'Find the greatest common divisor of given numbers.';
+const questionMessage = 'Is this number prime?';
 
 export const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
@@ -19,7 +20,7 @@ export const brainPrime = () => {
     return cons(question, correctAnswer);
   };
 
-  game(welcomeMessage, getQuestion);
+  game(welcomeMessage, getQuestion, questionMessage);
 };
 
 export default brainPrime;
