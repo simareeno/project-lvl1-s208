@@ -19,6 +19,9 @@ balance:
 progression:
 	npm run babel-node -- src/bin/brain-progression.js
 
+make prime:
+	npm run babel-node -- src/bin/brain-prime.js
+
 publish:
 	npm publish
 
