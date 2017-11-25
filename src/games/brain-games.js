@@ -1,7 +1,5 @@
-import { game } from '..';
+import game from '..';
 
-export const brainGames = () => {
-  game();
-};
+export const brainGames = () => game();
 
 export default brainGames;

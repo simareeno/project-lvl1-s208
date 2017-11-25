@@ -1,9 +1,17 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import { game, getRandomNumber, gcd } from '..';
+import game from '..';
+import { getRandomNumber } from '../utils';
+
+const welcomeMessage = 'Find the greatest common divisor of given numbers.';
+
+const gcd = (pair) => {
+  const a = car(pair);
+  const b = cdr(pair);
+  if (b === 0) return a;
+  return gcd(cons(b, a % b));
+};
 
 export const brainGcd = () => {
-  const welcomeMessage = 'Find the greatest common divisor of given numbers.';
-
   const getQuestion = () => {
     const numbersPair = cons(getRandomNumber(10, 100), getRandomNumber(10, 100));
     const question = `${car(numbersPair)} ${cdr(numbersPair)}`;

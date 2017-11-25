@@ -1,22 +1,18 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import { game, getRandomNumber, sum, sub, mul } from '..';
+import game from '..';
+import { getRandomNumber, getRandomSign, sum, sub, mul } from '../utils';
+
+const welcomeMessage = 'What is the result of the expression?';
 
 export const brainCalc = () => {
-  const welcomeMessage = 'What is the result of the expression?';
-
   const getQuestion = () => {
-    const signs = ['+', '-', '*'];
     const numbersPair = cons(getRandomNumber(1, 15), getRandomNumber(1, 15));
-    const sign = signs[getRandomNumber(0, signs.length)];
+    const sign = getRandomSign();
     const question = `${car(numbersPair)} ${sign} ${cdr(numbersPair)}`;
     let correctAnswer = Number;
-    if (sign === '+') {
-      correctAnswer = sum(numbersPair);
-    } else if (sign === '-') {
-      correctAnswer = sub(numbersPair);
-    } else {
-      correctAnswer = mul(numbersPair);
-    }
+    if (sign === '+') correctAnswer = sum(numbersPair);
+    if (sign === '-') correctAnswer = sub(numbersPair);
+    if (sign === '-') correctAnswer = mul(numbersPair);
     return cons(question, correctAnswer);
   };
 

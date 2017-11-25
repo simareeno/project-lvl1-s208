@@ -1,9 +1,10 @@
 import { cons } from 'hexlet-pairs';
-import { game, getRandomNumber } from '..';
+import game from '..';
+import { getRandomNumber } from '../utils';
+
+const welcomeMessage = 'Answer "yes" if number even otherwise answer "no".';
 
 export const brainEven = () => {
-  const welcomeMessage = 'Answer "yes" if number even otherwise answer "no".';
-
   const getQuestion = () => {
     const question = getRandomNumber(1, 100);
     const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
