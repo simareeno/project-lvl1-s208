@@ -12,7 +12,7 @@ export const brainCalc = () => {
     let correctAnswer = Number;
     if (sign === '+') correctAnswer = sum(numbersPair);
     if (sign === '-') correctAnswer = sub(numbersPair);
-    if (sign === '-') correctAnswer = mul(numbersPair);
+    if (sign === '*') correctAnswer = mul(numbersPair);
     return cons(question, correctAnswer);
   };
 
